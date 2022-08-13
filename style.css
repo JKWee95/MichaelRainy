@@ -1,0 +1,804 @@
+html{
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: weddingFont;
+  src: url("https://dl.dropbox.com/s/iqv3xrtvkzcpico/FREEBSC_.ttf");
+}
+
+@font-face {
+  font-family: headerFont;
+  src: url("https://dl.dropbox.com/s/gapmugcj7vklox6/Dancing_Script.ttf");
+}
+
+@font-face {
+  font-family: descWording;
+  src: url("https://dl.dropbox.com/s/79g4gsbj3fjhrj9/ArianaVioleta-dz2K.ttf");
+}
+
+.startModal {
+  display: block;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.65) 75%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
+  --gap:7%;
+  clip-path: polygon(0 0, 90% 0, 90% var(--gap), 100% var(--gap), 100% 100%, 0 100% );
+  background-size: 500% 500%;
+  background-position:95% 90%;
+  animation: Animation 5s ease;
+}
+
+@keyframes Animation { 
+    0%{
+      background-position:0% 5%;
+      color: transparent;
+    }
+    50%{
+      color: rgba(255, 255, 255, 0);
+    }
+    100%{
+      background-position:95% 95%;
+      color: rgba(255, 255, 255, 1);
+    }
+}
+
+.playAudioButton{
+  position: relative;
+  left: 80%;
+  top: 5%;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32px;
+  font-weight: bold;
+  animation: Animation 5s ease;
+}
+
+.backgroundMusic{
+  display: none;
+}
+
+.stickyHeader{
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  z-index: 3;
+  top: 0;
+  padding: 1%;
+}
+
+.toggle {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  left: 5%;
+  text-align: center;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: white;
+  border-radius: 16px;
+  width: 100px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before {
+  background-color: black;
+  color:black;
+  font-weight: bold;
+  content: "ENG";
+}
+.toggle-switch:after{
+  position: relative;
+  top:15%;
+  color: white;
+  font-weight: bold;
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 60px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s, width 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #E3DAD5;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  width: 50px;
+  left: 45px;
+  color:black;
+  font-weight: bold;
+  content: "CH";
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.rui-animation-play-paused{
+  position: absolute;
+  top:-5%;
+  left: 90%;
+  width: 50px;
+  height: 50px;
+  animation-play-state:paused;
+  -webkit-animation-play-state:paused; /* Safari and Chrome */
+  cursor: pointer;
+}
+
+.rui-audio-rotate-360{
+  position: absolute;
+  top:-10%;
+  left: 90%;
+  width: 50px;
+  height: 50px;
+  animation: audio-rotate-360 8s linear infinite;
+  -webkit-animation: audio-rotate-360 8s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes audio-rotate-360 {
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+@-webkit-keyframes audio-rotate-360 {
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.header{
+  position: relative;
+  width:100%;
+  height:300px;  /*To be adjusted in JS*/
+  z-index: -1;
+}
+
+.header_title{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5); /*black with opacity 0.5*/
+}
+
+.header_title_sub{
+  position: relative;
+  text-align: center;
+  color: #E3DAD5;
+  z-index: 2;
+}
+
+.headline{
+  position: relative;
+  font-size: 50px;
+  font-family: headerFont;
+}
+
+.headlineDate{
+  font-size: 40px;
+  font-family: headerFont;
+}
+
+.countdown{
+  font-size: 10px;
+}
+
+li span,
+.headerdatetime1,
+.headerdatetime2,
+.headerdatetime3,
+.headerdatetime4 {
+  display: block;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.vid{
+  position: fixed;
+}
+
+video{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+
+.firstSegment{
+  position: relative;
+  height:100%;
+  width:100%;
+  background-color: white;
+}
+
+.Ocean {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 400px;  /*To be adjusted in JS*/
+  background: rgba(0, 0, 0, 0.5); /*black with opacity 0.5*/
+  overflow: hidden;
+}
+
+.Wave {
+  width: 200%;
+  animation-name: swell;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /*fill: #4FC3F7;*/
+  fill: #E3DAD5;
+}
+
+@keyframes swell {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #E3DAD5;
+}
+
+.gapfiller{
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  top: -70px;
+  background-color: #E3DAD5;
+}
+
+.secondSegment{
+  padding-bottom: 10%;
+}
+
+.secondSegmentSub{
+  position: relative;
+  width:90%;
+  -ms-transform: translateX(5%);
+  transform: translateX(5%);
+  padding-bottom: 10%;
+  /*
+  background-image: url("wedding_invitation_card.jpg");*/
+  background-color: white;  
+}
+
+.secondSegmentTitle{
+  position: relative;
+  font-size: 40px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  font-family: weddingFont;
+  padding-top: 5%;
+}
+
+.groom{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  right: 15%;
+  font-size: 25px;
+}
+
+.groomDesc{
+  position: relative;
+  font-size: 10px;
+  padding-right: 5%;
+  top:30px;
+  font-family: descWording;
+}
+
+.groom_pic img{
+  width: 300px;
+  height: 380px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bride{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  left: 15%;
+  font-size: 25px;
+}
+
+.brideDesc{
+  position: relative;
+  font-size: 10px;
+  padding-left: 5%;
+  top:30px;
+  font-family: descWording;
+}
+
+.bride_pic img{
+  width: 300px;
+  height: 380px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.thirdSegment{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top:30px;
+  padding-bottom: 50px;
+  /*background-image: url("ring_back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;*/
+  background-color: #E3DAD5;
+}
+
+.thirdSegmentTitle{
+  position: relative;
+  font-size: 45px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  padding-bottom: 50px;
+  font-family: headerFont;
+}
+
+
+.imageGallery{
+  position: relative;
+  width:70%;
+  height: 600px;    /*adjust in JS*/
+  margin-bottom: 30px; /*cannot 100%??*/
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+button {
+  cursor: pointer;
+  font-size: 100%;
+  padding: 1% 3%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 100;
+  outline: none;
+  border: none;
+}
+
+.mySlides {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.imageSlideshow{
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fadein {
+  animation-name: fadein;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadein {
+  from {opacity: 0.1} 
+  to {opacity: 1}
+}
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeout {
+  from {opacity: 1} 
+  to {opacity: 0.1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+.ring{
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  margin-left:75%;
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  background-image: url("flower_ring.png");
+  background-repeat: no-repeat;
+}
+
+.fourthSegment{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  /*background-image: url("flower_background.jpg");
+  background-attachment: fixed;*/
+  background-color: #E3DAD5;
+  }
+
+.fourthSegmentTitle{
+  position: relative;
+  font-size: 60px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  font-family: weddingFont;
+  padding-top: 5%;
+  /*text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;*/
+}
+
+.whenAndWhere{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height:100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  padding-bottom: 50px;
+}
+
+.when{
+  position: relative;
+  text-align: center;
+  width: 30%;
+  background-color: white;
+  color: black;
+  /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+  padding-bottom: 30px;
+}
+
+.where{
+  position: relative;
+  text-align: center;
+  width: 30%;
+  background-color: transparent;
+  color: black;
+  /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+  padding-bottom: 30px;
+}
+
+.googlemap{
+  position: relative;
+  background-color: black;
+  width: 85%;
+  height: 500px;
+  -ms-transform: translateX(10%);
+  transform: translateX(10%);
+  border: 1px solid;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form{
+  position: relative;
+  background-color: white;
+  border: 1px solid #ccc;
+  width:30%;
+  height: 800px;
+  left: 50%;
+  transform: translate(-50%,0);
+  margin-top: 10%;
+  padding: 2%;
+  overflow-y: auto;
+  background-color: #DBC2AD;
+  /*
+  background-image: url("card_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;*/
+}
+
+.formHeader{
+  position: relative;
+  width: 100%;
+  color: black;
+  font-size: 60px;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  text-align: center;
+  font-family: headerFont;
+}
+
+.formMain1{
+  width: 100%;
+  height: 80%;
+  font-size: 25px;
+}
+
+.attendance{
+  position: relative;
+  align-content: center;
+  text-align: center; 
+  font-weight: bold;
+  /*text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;*/
+  font-size: 25px;
+}
+
+.formComing{
+  position: relative;
+  display: none;
+}
+
+.attendees{
+  
+}
+
+.formNotComing{
+  position: relative;
+  display: none;
+}
+
+#attendee1{
+  position: relative;
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+.firstName{
+  font-size: 5px;
+  line-height: 100px;
+}
+
+.RelationshipWithGroomAndBride{
+  position: relative;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+.Relationship{
+  position: relative;
+  width: 50%;
+}
+
+.vegetarian{
+  position: relative;
+  padding-top:4%;
+  font-weight: normal;
+}
+
+.hidingSubmit{
+  display: none !important;
+}
+
+input[type=text] {
+  width: 100%;
+  height: 50px;
+  margin-top: 5%;
+  /*padding: 12px 20px;
+  margin: 8px 0;*/
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+.button {
+  display: flex;
+  margin-top: 5%;
+  height: 5%;
+  padding: 0;
+  background: #E3DAD5;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover .button__text{
+  transition: 0.2s;
+  background-color: #DD9DA8;
+  color: black;
+  font-size: 25px;
+}
+
+.button:active .button__text,
+.button:hover .button__icon{
+  transition: 0.2s;
+  background-color: #D396A1;
+  color: black;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #000;
+  height: 100%;
+}
+
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #000;
+  height: 100%;
+}
+
+.plusImage{
+  position: relative;
+  width: 8px;
+  height: 8px;
+}
+
+.comments{
+  position: relative;
+  margin-top: 5%;
+  width: 100%;
+  height:10%; 
+}
+
+.submit {
+  display: none;
+  width: 100%;
+  height: 10%;
+  background-color: #3AAFA9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit:hover {
+  background-color: #2F8F8A;
+  font-family: Arial;
+}
+
+/*input[type=CommentText] {
+  width: 100%;
+  height: 100px;
+  padding: 0 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial;
+}*/
+

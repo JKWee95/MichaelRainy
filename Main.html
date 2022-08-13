@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Look in the dark</title>
+    </head>
+    <body style="margin:0; padding:0">
+        <div class=startModal>
+            <div class=playAudioButton>Click Here To Play Audio</div>
+        </div>
+        <div class=stickyHeader>
+            <label class="toggle">
+                <input class="toggle-checkbox" id="toggle_checkbox" type="checkbox">
+                <div class="toggle-switch"></div>
+            </label>
+            <img class="rui-animation-play-paused" src="https://dl.dropbox.com/s/24wqjla27paz7f4/music_icon.png" id="music" onclick="music()"/>
+            <audio controls loop class=backgroundMusic id="backgroundMusic">
+                <source src="https://dl.dropbox.com/s/5vrtl2ip3uk55sb/song.mp3">
+            </audio>
+        </div>
+        <div class=header>
+            <div class=header_title>
+                <div class=header_title_sub>
+                    <div id="headline" class="headline">You are invited! <br>  </div> <br>
+                    <div class="headlineDate"> 5th Nov 2022 </div>
+                    <div id="countdown" class="countdown">
+                        <ul>
+                            <li><span id="days" class="headerdatetime1"></span><div class="days">Days</div></li>
+                            <li><span id="hours" class="headerdatetime2"></span><div class="hours">Hours</div></li>
+                            <li><span id="minutes" class="headerdatetime3"></span><div class="minutes">Minutes</div></li>
+                            <li><span id="seconds" class="headerdatetime4"></span><div class="seconds">Seconds</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <img src="https://dl.dropbox.com/s/p0j6i3jpbd5it7u/header.png" style="width:100%" class="vid">
+        </div>
+        <div class="Ocean">
+            <svg class="Wave" viewBox="0 0 12960 1120">
+                <path d="M9720,320C8100,320,8100,0,6480,0S4860,320,3240,320,1620,0,0,0V1120H12960V0C11340,0,11340,320,9720,320Z">
+                    <animate
+                        dur="10s"
+                        repeatCount="indefinite"
+                        attributeName="d"
+                        values="
+                          M9720,320C8100,320,8100,0,6480,0S4860,320,3240,320,1620,0,0,0V1120H12960V0C11340,0,11340,320,9720,320Z;
+                          M9720,0C8100,0,8100,319,6480,319S4860,0,3240,0,1620,320,0,320v800H12960V320C11340,320,11340,0,9720,0Z;
+                          M9720,320C8100,320,8100,0,6480,0S4860,320,3240,320,1620,0,0,0V1120H12960V0C11340,0,11340,320,9720,320Z
+                        "/>
+                </path>
+            </svg>
+        </div>
+        <div class=content>
+            <div class=gapfiller>
+            </div>
+            <div class=secondSegment>
+                <div class=secondSegmentSub>
+                    <div class=secondSegmentTitle>
+                        ~Groom & Bride~
+                    </div>
+                    <br><br><br>
+                    <div class=groom>
+                        <div class=groomDesc>
+                        <u>About Groom</u> <br><br>Lee Ming Huat @ Michael <br> <br> Every love story is beautiful, <br> but ours is my favorite.
+                        </div>
+                        <div class=groom_pic>
+                            <img src="https://dl.dropbox.com/s/m41fn895qmiqcz8/groom.jpg">
+                        </div>
+                    </div>
+                    <br>
+                    <div class=bride>
+                        <div class=bride_pic>
+                            <img src="https://dl.dropbox.com/s/t8pnz7u28vcijha/bride.jpg">
+                        </div>
+                        <div class=brideDesc>
+                        <u>About Bride</u> <br> <br>Rainy Cheong<br><br>The best thing to hold onto in life <br> is each other.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=thirdSegment>
+                <div class=thirdSegmentTitle>
+                    We'd love to share our <br> happiness with you
+                </div>
+                <br>
+                <div class=imageGallery>
+                    <div class="mySlides fadein" id="mySlides1">
+                      <div class="numbertext">1 / 11</div>
+                      <img src="https://dl.dropbox.com/s/p3yl6e6cxmrns43/1.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides2">
+                      <div class="numbertext">2 / 11</div>
+                      <img src="https://dl.dropbox.com/s/c4j3o25csup16ex/2.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides3">
+                      <div class="numbertext">3 / 11</div>
+                      <img src="https://dl.dropbox.com/s/88rdivwvhfrki5p/3.jpg?" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides4">
+                      <div class="numbertext">4 / 11</div>
+                      <img src="https://dl.dropbox.com/s/qq80rr38776gi0c/4.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides5">
+                      <div class="numbertext">5 / 11</div>
+                      <img src="https://dl.dropbox.com/s/o8r43bgnsc5olxv/5.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides6">
+                      <div class="numbertext">6 / 11</div>
+                      <img src="https://dl.dropbox.com/s/hsmkch6884t3m9f/6.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides7">
+                      <div class="numbertext">7 / 11</div>
+                      <img src="https://dl.dropbox.com/s/mg3k6lzjq0oltvx/7.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides8">
+                      <div class="numbertext">8 / 11</div>
+                      <img src="https://dl.dropbox.com/s/i74pxp99pv88fnz/8.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides9">
+                      <div class="numbertext">9 / 11</div>
+                      <img src="https://dl.dropbox.com/s/wacb5a495x90lk4/9.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides10">
+                      <div class="numbertext">10 / 11</div>
+                      <img src="https://dl.dropbox.com/s/p6qe5mk5jvllfpn/10.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+                    <div class="mySlides fadein" id="mySlides11">
+                      <div class="numbertext">11 / 11</div>
+                      <img src="https://dl.dropbox.com/s/9jr8xkhfjj48ftl/11.jpg" style="max-height:100%; max-width: 100%" class="imageSlideshow">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot active" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                  <span class="dot" onclick="currentSlide(4)"></span> 
+                  <span class="dot" onclick="currentSlide(5)"></span> 
+                  <span class="dot" onclick="currentSlide(6)"></span>
+                  <span class="dot" onclick="currentSlide(7)"></span> 
+                  <span class="dot" onclick="currentSlide(8)"></span> 
+                  <span class="dot" onclick="currentSlide(9)"></span>
+                  <span class="dot" onclick="currentSlide(10)"></span> 
+                  <span class="dot" onclick="currentSlide(11)"></span>
+                </div>
+            </div>
+
+            <div class=fourthSegment>
+                <div class=secondSegmentSub>
+                    <div class=fourthSegmentTitle>
+                        ~Time and Venue~
+                    </div>
+                    <br>
+                    <div class=whenAndWhere>
+                        <div class=when>
+                            <h2>When<br></h2>
+                            November 5, 2022 <br> at 07:00 pm
+                        </div>
+                        <div class=where>
+                            <h2>Where<br></h2>
+                            LS Seafood Restaurant <br> @ Sunway BigBox Mall, JB
+                        </div>
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15954.53192784924!2d103.6272583!3d1.3966674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x17b25b12d1dea2ab!2sLS%20Seafood%20Restaurant!5e0!3m2!1sen!2ssg!4v1659851422301!5m2!1sen!2ssg" class=googlemap style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            
+                <div class=form>
+                    <div class=formHeader> Will You Attend? </div>
+                    <div class="formMain1">
+                        <div class=attendance>
+                            <input type="radio" id="coming" name="fav_language" value="coming" onclick="checkRadio()">
+                            <label for="coming" class=Coming>Of Course, I/We will attend</label>
+                            <input type="radio" id="notComing" name="fav_language" value="notComing" onclick="checkRadio()">
+                            <label for="notComing" class=NotComing>Sorry, I/We can't come</label>
+                        </div>
+                        <div class="formComing">
+
+                            <div id=attendees class=attendees>
+
+                                <div id=attendee1 class=attendee1>
+                                    <form method="POST" action="https://script.google.com/macros/s/AKfycbyDmZoNsXVtx6F2Knyk0mikmpIwa_zwFf0QQj2aIEsnKJa7Jj-kCh5QRXXG8pGFVAwx/exec" id="form" class="form0">
+                                        <div class=attendeeTitle0 id="attendeeTitle"><u class=atnheader> Attendee </u><u> 1: </u></div>
+                                        <input type="text" id="fname" name="0[firstn]" placeholder="Name" class="firstname0 firstName">
+                                        <div class=RelationshipWithGroomAndBride>
+                                            <div class="Relationship"> 
+                                                <div class=RelationshipWithGroom>Relationship with Groom <br> (For seating arrangement purpose)<br></div>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="familyOrCousinWithGroom">
+                                                <label for="familyOrCousinWithGroom" class=familyOrCousinWithGroom>Family/Cousin with Groom</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="PCFWithGroom">
+                                                <label for="PCFWithGroom" class=PCFWithGroom>Primary School Friend with Groom</label><br>
+                                                <input type="radio" class=" relationship0 relationship" name="0[Rela]" value="SCFWithGroom">
+                                                <label for="SCFWithGroom" class=SCFWithGroom>Secondary School Friend with Groom</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="UniFWithGroom">
+                                                <label for="UniFWithGroom" class=UniFWithGroom>University Friend with Groom</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="ColleagueWithGroom">
+                                                <label for="ColleagueWithGroom" class=ColleagueWithGroom>Colleague with Groom</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="ExColleagueWithGroom">
+                                                <label for="ExColleagueWithGroom" class=ExColleagueWithGroom>Ex-Colleague with Groom</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="OthersWithGroom">
+                                                <label for="OthersWithGroom" class=OthersWithGroom>Others</label><br>
+                                            </div>
+                                            <div class="Relationship">
+                                                <div class=RelationshipWithBride>Relationship with Bride <br> (For seating arrangement purpose)<br></div>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="familyOrCousinWithBride">
+                                                <label for="familyOrCousinWithBride" class=familyOrCousinWithBride>Family/Cousin with Bride</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="PCFWithBride">
+                                                <label for="PCFWithBride" class=PCFWithBride>Primary School Friend with Bride</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="SCFWithBride">
+                                                <label for="SCFWithBride" class=SCFWithBride>Secondary School Friend with Bride</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="UniFWithBride">
+                                                <label for="UniFWithBride" class=UniFWithBride>University Friend with Bride</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="ColleagueWithBride">
+                                                <label for="ColleagueWithBride" class=ColleagueWithBride>Colleague with Bride</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="ExColleagueWithBride">
+                                                <label for="ExColleagueWithBride" class=ExColleagueWithBride>Ex-Colleague with Bride</label><br>
+                                                <input type="radio" class="relationship0 relationship" name="0[Rela]" value="OthersWithBride">
+                                                <label for="OthersWithBride" class=OthersWithBride>Others</label><br>
+                                            </div>
+                                        </div>
+                                        <div class=vegetarian>
+                                            <input type="checkbox" class="vege0 vege" name="0[vege]" value="vege">
+                                            <label for="vege" class="vegeWording"> I'm a vegetarian</label><br>
+                                        </div> 
+                                        <input id="Relationship" name="Relationship" type="text" placeholder="Relationship" class="hidingSubmit Relationship0">
+                                        <input id="FirstName" name="FirstName" type="text" placeholder="Name" class="hidingSubmit FirstName0">
+                                        <input id="Vege" name="Vege" type="text" placeholder="Vege" class="hidingSubmit Vege0">
+                                        <input id="Comments" name="Comments" type="text" placeholder="Comments" class="hidingSubmit Commentsfinal0">
+                                        <input id="ComingNotComing" name="ComingNotComing" type="text" placeholder="ComingNotComing" class="hidingSubmit ComingNotComing0">
+                                        <button type="submit" class="hidingSubmitsss0 hidingSubmit" id="asdasd">Send</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <button type="button" class="button" id="button">
+                            <span class="button__text">Add one more attendee</span>
+                            <span class="button__icon">
+                                <img src="https://dl.dropbox.com/s/yapvdxt1liziqk0/plus.png" width="3px" heigh="3px" class="plusImage">
+                            </span>
+                            </button>
+                            <textarea name="message" rows="1" class=comments placeholder="Let us know if there's anything we can help"></textarea>
+                        <!-- <input type="CommentText" id="Comments" name="Comments" placeholder="Help us know you a little more"> -->
+
+                            
+                        </div>
+                        <div class=formNotComing>
+                            <input type="text" id="attendanceCount" name="attendanceCountNotComing" class="attendanceCount" placeholder="Name">
+                        </div>
+                        <button class="submit" id="submit" onclick="formSubmission(0)"> Submit </button>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"defer></script>
+        <script src='script.js'></script>
+    </body>
+</html>
